@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+
+}
+
+:root {
+    font-size: 62.5%;
+
+    --color-base-fundo-hf: #065E7C;
+    --color-base-fundo-main: #ffffff;
+    --background-form: rgba(255, 255, 255, 0.20);
+
+    --platform-aliases-shape-principal: #202024;
+
+
+    font-family: 'Mulish', sans-serif;
+}
+
+html,
+body,
+input {
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+
+}
+
+
+/*HEADER */
+
+.app {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+
+    height: 100vh;
+    background-color: var(--color-base-fundo-hf);
+}
+
+
+
+
+
+.container {
+    padding: 1.2rem 2.8rem;
+    width: min(43rem, 100%);
+
+    margin-inline: auto;
+    margin: 0 auto;
+
+    background-color: var(--color-base-fundo-hf);
+}
+
+
+
+header {
+
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    font-weight: 700;
+
+
+
+
+
+}
+
+.input-wraper label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.input-wraper input {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--background-form);
+    border-radius: 1.4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    opacity: 0.56;
+}
+
+.input-wraper input::placeholder {
+    color: var(--color-base-fundo-main);
+}
+
+
+
+.avatar {
+    width: 4.2rem;
+    height: 4.2rem;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+header form {
+    flex: 1;
+}
+
+
+/*main e aside*/
+
+main,
+aside {
+    background: var(--color-base-fundo-main);
+}
+
+.content {
+    padding: 0 2.2rem;
+}
+
+.content h1,
+aside h1 {
+    color: var(--platform-aliases-shape-principal);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 3.8rem;
+
+    margin-top: 3.1rem;
+
+
+}
+
+.icons {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: .8rem;
+
+
+}
+
+
+.first-p {
+    margin-top: 3.2rem;
+}
+
+
+/*aside*/
+aside h1 {
+    margin-bottom: 3.2rem;
+}
+
+figure {
+    display: flex;
+    gap: 1.6rem;
+
+}
+
+
+figure img {
+    max-width: 15rem;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+
+.description h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+    margin-bottom: 1.2rem;
+}
+
+
+.description p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.2rem;
+}
+
+
+aside figure {
+    margin-bottom: 3.2rem;
+}
+
+
+/*FOOTER*/
+
+footer {
+    background-color: var(--color-base-fundo-hf);
+    padding: 1.6rem;
+    color: var(--color-base-fundo-main);
+    text-align: center;
+
+    font-family: 'Mulish';
+    font-size: 1.6rem;
+
+    font-weight: 600;
+
+}
+
+
+@media (min-width:768px) {
+
+    .container {
+        padding: 1.2rem 2.8rem;
+        width: min(76.8rem, 100%);
+
+        margin-inline: auto;
+        margin: 0 auto;
+
+        background-color: var(--color-base-fundo-hf);
+    }
+
+
+    .image-section img {
+
+        width: 100%;
+        /* Garante que a div ocupe todo o espaço horizontal disponível */
+        height: 100vh;
+        /* Garante que a div ocupe toda a altura da janela de visualização (viewport) */
+
+        background-size: cover;
+        /* Faz a imagem cobrir toda a div */
+        background-repeat: no-repeat;
+        /* Evita a repetição da imagem */
+        background-position: center center;
+        /* Centraliza a imagem na div */
+
+
+
+    }
+}
+
+
+@media (min-width:1024px) {
+    .container {
+        padding: 1.2rem 2.8rem;
+        width: min(120.4rem, 100%);
+
+        margin-inline: auto;
+        margin: 0 auto;
+
+        background-color: var(--color-base-fundo-hf);
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 60% 40%);
+        gap: 2.4rem;
+
+        background-color: var(--color-base-fundo-main);
+
+        padding: 4.4rem 10rem;
+    }
+
+    .image-section {
+        border-radius: .5rem;
+        
+    }
+
+    .image-section img {
+        border-radius: .8rem;
+        max-width: 100%;
+        max-height: 40rem;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+
+        margin-top: 2.8rem;
+    }
+
+
+    aside {
+        align-items: center;
+    }
+
+    
+
+    }
+
+
+
+
+header {
+    --startY : -100%;
+    animation: move 2s;
+}
+
+footer {
+    --startY: 100%;
+    animation: move 2s;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+
+
+
+.item {
+    --delay : .4s;
+    animation: appear .2s var(--delay) backwards;
+}
+
+
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50%{
+        transform: scale(1.2)
+    }
+}
+
